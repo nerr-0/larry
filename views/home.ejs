@@ -1,9 +1,12 @@
 <h2>Welcome to Sir Larry Photography</h2>
+
 <section class="gallery">
   <% photos.forEach(photo => { %>
-    <div class="photo-card">
-      <img src="<%= photo.imageUrl %>" alt="<%= photo.title %>">
-      <p><%= photo.title %></p>
+    <div class="gallery-item">
+      <img src="<%= photo.imageUrl || 'https://source.unsplash.com/random/400x300?sig=' + photo.title %>" alt="<%= photo.title %>">
+      <h3><%= photo.title %></h3>
+      <p><%= photo.category %></p>
     </div>
   <% }) %>
 </section>
+
