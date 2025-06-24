@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sir Larry Photography</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
   <header>
@@ -12,19 +13,21 @@
       <a href="/">Home</a>
       <a href="/portfolio">Portfolio</a>
       <a href="/packages">Packages</a>
-      <a href="/bookings/new">Book Now</a>
+      <a href="/bookings/new">Book</a>
       <a href="/contact">Contact</a>
-      <a href="/admin/login">Admin</a>
     </nav>
   </header>
+
   <main>
     <% if (messages.success) { %>
-      <p class="flash"><%= messages.success %></p>
+      <p class="success"><%= messages.success %></p>
     <% } %>
+
     <%- body %>
   </main>
+
   <footer>
-    <p>&copy; <%= new Date().getFullYear() %> Sir Larry Photography</p>
+    <p>&copy; <%= new Date().getFullYear() %> Sir Larry Photography. All rights reserved.</p>
   </footer>
 </body>
 </html>
