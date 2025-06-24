@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const path = require('path');
 const dotenv = require('dotenv');
+const expressLayouts = require('express-ejs-layouts');
 
 // Load environment variables
 dotenv.config();
@@ -19,8 +20,13 @@ mongoose.connect(process.env.MONGO_URI, {
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+// Use EJS layouts
+app.use(expressLayouts);
+app.set('layout', 'layout'); // Refers to views/layout.ejs
 
 // Session
 app.use(session({
@@ -84,3 +90,6 @@ app.get('/admin/login', (req, res) => {
 // Launch server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+
