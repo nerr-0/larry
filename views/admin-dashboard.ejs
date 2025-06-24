@@ -1,0 +1,24 @@
+<% layout('layout') -%>
+<h2>Admin Dashboard</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Package</th>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% bookings.forEach(booking => { %>
+      <tr>
+        <td><%= booking.name %></td>
+        <td><%= booking.email %></td>
+        <td><%= booking.packageId.name %></td>
+        <td><%= booking.date.toDateString() %></td>
+        <td><%= booking.status %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

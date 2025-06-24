@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sir Larry Photography</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Sir Larry Photography</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/packages">Packages</a>
+      <a href="/bookings/new">Book Now</a>
+      <a href="/contact">Contact</a>
+      <a href="/admin/login">Admin</a>
+    </nav>
+  </header>
+  <main>
+    <% if (messages.success) { %>
+      <p class="flash"><%= messages.success %></p>
+    <% } %>
+    <%- body %>
+  </main>
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %> Sir Larry Photography</p>
+  </footer>
+</body>
+</html>

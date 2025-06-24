@@ -1,0 +1,10 @@
+<% layout('layout') -%>
+<h2>Portfolio</h2>
+<section class="gallery">
+  <% photos.forEach(photo => { %>
+    <div class="photo-card">
+      <img src="<%= photo.imageUrl %>" alt="<%= photo.title %>">
+      <p><%= photo.title %> - <%= photo.category %></p>
+    </div>
+  <% }) %>
+</section>

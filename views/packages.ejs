@@ -1,0 +1,12 @@
+<% layout('layout') -%>
+<h2>Photography Packages</h2>
+<ul class="packages">
+  <% packages.forEach(pkg => { %>
+    <li>
+      <h3><%= pkg.name %></h3>
+      <p><%= pkg.description %></p>
+      <strong>KES <%= pkg.price %></strong>
+      <p>Duration: <%= pkg.duration %></p>
+    </li>
+  <% }) %>
+</ul>
