@@ -9,13 +9,14 @@ const expressLayouts = require('express-ejs-layouts');
 dotenv.config();
 
 const app = express();
-
+//temporarily commented out for production purposes.
+//code should be reverted back after successful mongo registration
 // Database connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB connection error:', err));
+// mongoose.connect(process.env.MONGO_URI, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// }).then(() => console.log('MongoDB connected'))
+//   .catch(err => console.error('MongoDB connection error:', err));
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
